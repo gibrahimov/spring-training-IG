@@ -1,0 +1,93 @@
+Spring created by Rod Johnson, Australian
+Spring is Ecosystem
+When developers refer to the Spring framework, they refer to a part of the software capabilities
+that include : Spring Core, Spring Data Access, Spring Model - View - Controller(MVC), Spring Testing
+Spring covers those 22 projects. If any developer says I am using spring framework it means they use those
+22 projects maybe some or maybe all.
+Spring is supporting UI design
+
+Tightly coupled vs Loosely Coupled. Are the objects Tightly coupled or Loosely Coupled?
+
+We should make our code according to loosely coupled principle. If you want to make any change in your
+code, and to do those changes yo travel to so many different class and make changes in each of those
+classes then that is NOT a good design. Our code should be adjustable to changes with minimal effort.
+And Interfaces and abstract classes gives us that option.
+Loose couple allows making changes in the code easily
+Testing of loosely couples structure is easier than tightly coupled structure
+Less amount if code is required to make changes in a loosely couples structure than tightly coupled
+
+
+So we are starting to learn Spring components. Components are:
+1.Spring core; This is top of component. All other components are using Spring Core
+2.Spring AOP
+3.Spring Web Flow
+4. Spring DOA
+.... etc ref to slide page 18
+
+---------------------------------------SPRING CORE-----------------------------------------------
+
+Spring IoC Container (IoC - Inversion of control) - take control of managing and creating object
+
+1st component of Spring which is Spring Core will implement Inversion of control for us which will
+manage the beans.
+
+Interview: Container is place where Spring creat and manage the Java objects which is called beans.
+
+IoC - Inversion of control is aimed to achieve Loose Coupling.
+
+Configuration - is a place where we define which objects needs to be created and managed by Spring
+
+So summary if IoC Inversion of control
+1. We create POJO classes and regular classes (POJO -plain old Java object)
+2. We create and provide configuration for Spring. In Configuration we will define what kind of objects needs to
+be created from class and managed by Spring. We need to tell Spring out of maybe 1000 POJOs which
+one would you like Spring to mange it.
+3. Where Spring will create objects from those selected POJOs and hold them and when I ask spring Spring
+will provide object for me. So that place is called Container. Container is place where Spring create
+all the objects from selected POJO classes and managing for us. Since those objects are managed by
+Spring those objects are called Beans.
+4. And at the end we will have ready configured application
+
+
+We create container by using one of two Interfaces; Interview question
+1. Spring BeanFactory. BeanFactory is parent, root interface
+2. ApplicationContext. Since ApplicationContext extending BeanFactory we can just use ApplicationContext
+Spring by default use ApplicationContext to create container.
+
+
+Process:
+
+ApplicationContext container = new AnnotationConfigApplicationContext(ComputerConfig.class);
+After importing library I can use ApplicationContext interface. We put ApplicationContext on left side
+of interface and right side we put  is one of the implementation of ApplicationContext interface which
+is polymorphism.
+
+This will create container
+It will go to ComputerConfig.class configuration class adn it will check each @Bean annotations
+if it finds @Bean annotations, it will read and create object from it and add into container.
+
+Interview: If we drill down new AnnotationConfigApplicationContext we will see there are different
+constructors inside. There is one constructor at below
+ public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
+        this();
+        this.register(componentClasses);
+        this.refresh();
+    }
+it says we can define our configuration classes inside. And when Spring run it will go inside that
+configuration classes, look inside find @Beans and it can create object for you.
+
+They can ask this(); is calling other no argument constructor.
+For this(); we can answer:
+We I create my container with new AnnotationConfigApplicationContext, there are different constructor inside
+And one of the constructor calling other constructor with this(); keyword.
+
+
+Spring IoC Container: Wiring beans
+
+---------------------------------------------------------------------------------------
+Dependency Injection- DI is an application of the IoC principle.
+
+So we have Beans, one Bean require another Bean so basically those Beans need to be wired
+and Spring will wire them and this process is called Dependency Injection
+or we can say Spring container "injects" objects into other objects or “dependencies”.
+
