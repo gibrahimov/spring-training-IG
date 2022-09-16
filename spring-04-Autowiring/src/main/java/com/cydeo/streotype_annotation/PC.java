@@ -10,9 +10,10 @@ import org.springframework.stereotype.Component;
 @Getter
 @Component
 /*
-We ar trying to create PC application. In order to create PC we need Case, Monitor, Motherboard
+1st rule Dependency injection can't happen with primitives!
+We are trying to create PC application. In order to create PC we need Case, Monitor, Motherboard
 We have implementation classes of Case, Monitor and Motherboard. So we need to create PC
-which is to create PC object like PC = new PC(). So I don't want to do this spring will
+which is to create PC objects like PC = new PC(). So I don't want to do this spring will
 manage object creation. In module 1 we did PC myPc = new PC(dell, sony, asus); This is what
 we did. But we don't want to create object ourselves, we want spring mange this object creating
 process.
@@ -25,7 +26,7 @@ called constructor injection.
 Starting with Spring version 4.3, when you only have one constructor in the class,
 you can omit writing the @Autowired annotation. AND even we create constructor with lombok
 @AllArgConstructor, it will still be OK and accepted. So we are in spring version 5.3.22
-per pom file. so we can remove it, just keeping for understnading purposes.
+per pom file. so we can remove it, just keeping for understanding purposes.
  */
 public class PC {
 
