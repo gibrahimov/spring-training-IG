@@ -11,7 +11,7 @@ import java.util.List;
 @ConfigurationProperties(prefix = "db")
 public class DBConfigData {
 
-    private String userName;
+    private String username;
     private String password;
     private List<String> type; // type is more than 1 so we used List
 

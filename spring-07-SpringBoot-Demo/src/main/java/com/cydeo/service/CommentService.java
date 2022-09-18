@@ -1,6 +1,7 @@
 package com.cydeo.service;
 
 import com.cydeo.config.AppConfigData;
+import com.cydeo.config.DBConfigData;
 import com.cydeo.model.Comment;
 import com.cydeo.proxy.CommentNotificationProxy;
 import com.cydeo.repository.CommentRepository;
@@ -22,14 +23,16 @@ public class CommentService {
 //forget to create constructor which will not create Autowire, BUT if you put final key word it will
 //start complaining and will FORCE/REMIND you to generate constructor.
 private final AppConfigData appConfigData;
+private final DBConfigData dbConfigData;
 
 
 
 //once you create constructor it generates Autowire automatically
-    public CommentService(CommentRepository commentRepository, @Qualifier("EMAIL") CommentNotificationProxy commentNotificationProxy, AppConfigData appConfigData) {
+    public CommentService(CommentRepository commentRepository, @Qualifier("EMAIL") CommentNotificationProxy commentNotificationProxy, AppConfigData appConfigData, DBConfigData dbConfigData) {
         this.commentRepository = commentRepository;
         this.commentNotificationProxy = commentNotificationProxy;
         this.appConfigData = appConfigData;
+        this.dbConfigData = dbConfigData;
     }
 
     public void publishComment(Comment comment) {
@@ -49,6 +52,13 @@ private final AppConfigData appConfigData;
         System.out.println(appConfigData.getUserName());
         System.out.println(appConfigData.getPassword());
         System.out.println(appConfigData.getUrl());
+    }
+
+    public void printDbConfigData(){
+        System.out.println(dbConfigData.getUsername());
+        System.out.println(dbConfigData.getPassword());
+        System.out.println(dbConfigData.getType());
+
     }
 
 }

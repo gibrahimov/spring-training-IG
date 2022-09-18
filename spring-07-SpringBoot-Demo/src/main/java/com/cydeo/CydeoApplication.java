@@ -23,6 +23,7 @@ public class CydeoApplication {
         commentService.publishComment(comment);
 
         commentService.printConfigData();
+        commentService.printDbConfigData();
 
     }
 
