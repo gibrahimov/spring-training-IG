@@ -21,9 +21,6 @@ public class CommentService {
 //forget to create constructor which will not create Autowire, BUT if you put final key word it will
 //start complaining and will FORCE/REMIND you to generate constructor.
 
-
-
-
 //once you create constructor it generates Autowire automatically
     public CommentService(CommentRepository commentRepository, @Qualifier("EMAIL") CommentNotificationProxy commentNotificationProxy) {
         this.commentRepository = commentRepository;
