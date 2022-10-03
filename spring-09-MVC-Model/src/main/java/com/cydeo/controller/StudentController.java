@@ -15,7 +15,7 @@ public class StudentController {
 
     @RequestMapping("/welcome")
     public String homePage(Model model){
-        model.addAttribute("name","Cydeo");
+        model.addAttribute("name","Cydeo");// "name" is holding "Cydeo" value
         model.addAttribute("course","JavaSpringBoot");
 
         int studentId = new Random().nextInt();

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Registration Form</title>
+</head>
+<body>
+
+<div align="center">
+
+    <form th:action="@{/employee/confirm}" method="post" th:object="${employee}">
+<!--Register button is related to form and anny action that happen upon clicking Register button
+ should be described as th:action -->
+        <label>First Name:</label>
+        <input type="text" th:field="*{firstName}"><br>
+
+        <label>Last Name:</label>
+        <input type="text" th:field="*{lastName}"><br>
+
+        <label>Email:</label>
+        <input type="email" th:field="*{email}"><br>
+
+        <label>Graduated:</label>
+        <input type="checkbox" th:field="*{graduated}"><br>
+
+        <label>Gender:</label>
+        <input type="radio" value="Male" th:field="*{gender}">Male
+        <input type="radio" value="Female" th:field="*{gender}">Female<br>
+
+        <label>Select Shift:</label>
+        <select th:field="*{shift}">
+            <option th:each = "theShift : ${shiftList}" th:value="${theShift}" th:text="${theShift}" ></option>
+        </select><br>
+
+        <label>Company:</label>
+        <textarea th:field="*{company}"></textarea><br>
+
+        <button type="submit">Register</button>
+
+
+    </form>
+
+</div>
+
+</body>
+</html>
