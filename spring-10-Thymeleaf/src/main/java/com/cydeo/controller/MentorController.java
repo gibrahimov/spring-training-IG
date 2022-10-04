@@ -28,7 +28,7 @@ public class MentorController {
     @PostMapping("/confirm")
     public String submitForm(@ModelAttribute("mentor") Mentor mentor){
 
-        return "redirect:/mentor/register";
+        return "redirect:/mentor/register"; // redirect to end point NOT to html file
     }
 
 }
