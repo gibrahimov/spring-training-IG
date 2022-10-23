@@ -31,5 +31,8 @@ public class Student {
    // @Enumerated(EnumType.ORDINAL) means numbers. we always use String above one
     private Gender gender;
 
+    @Transient// sometimes in a class you don't want to show as field when you run this file won't show as column name
+    private String city;
+
 
 }
