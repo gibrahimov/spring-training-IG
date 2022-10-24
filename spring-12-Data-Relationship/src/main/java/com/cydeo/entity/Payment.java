@@ -26,13 +26,19 @@ public class Payment {
     @Enumerated(EnumType.STRING)
     private Status paymentStatus;
 
-    @OneToOne
-    @JoinColumn(name = "payment_detail_id")
+    //@OneToOne(cascade = CascadeType.ALL) we don't use it because we never delete data from table
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(name = "payment_detail_id")// this is optional and can be removed
     private PaymentDetail paymentDetail;
+
+    @ManyToOne
+    private Merchant merchant;
 
     public Payment(LocalDate createdDate, BigDecimal amount, Status paymentStatus) {
         this.createdDate = createdDate;
         this.amount = amount;
         this.paymentStatus = paymentStatus;
     }
+
+
 }
