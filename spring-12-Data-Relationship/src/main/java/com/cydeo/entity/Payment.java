@@ -28,7 +28,7 @@ public class Payment {
 
     //@OneToOne(cascade = CascadeType.ALL) we don't use it because we never delete data from table
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(name = "payment_detail_id")// this is optional and can be removed
+    @JoinColumn(name = "payment_detail_id")
     private PaymentDetail paymentDetail;
 
     @ManyToOne
