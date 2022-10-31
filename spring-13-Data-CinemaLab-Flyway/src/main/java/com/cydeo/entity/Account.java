@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Data
+@Data// provides toString method. No one use toString in entity class.
 @NoArgsConstructor
 @Table(name = "account_details")
 public class Account extends BaseEntity{
