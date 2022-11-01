@@ -1,6 +1,6 @@
 package com.cydeo.entity;
 
-import lombok.Data;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-public class MovieCinema extends BaseEntity{
+public class MovieCinema extends BaseEntity {
 
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dateTime;
@@ -29,7 +29,7 @@ public class MovieCinema extends BaseEntity{
     public String toString() {
         return "MovieCinema{" +
                 "dateTime=" + dateTime +
-                ", movie=" + movie +
                 '}';
     }
+
 }

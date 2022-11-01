@@ -12,11 +12,12 @@ import javax.sql.DataSource;
 public class Spring13DataCinemaLabFlywayApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(Spring13DataCinemaLabFlywayApplication.class, args);
     }
 
     @Bean
-    public MigrateResult migrateResult(DataSource dataSource) {
+    public MigrateResult migrateResult(DataSource dataSource){
         return Flyway.configure().baselineOnMigrate(true).dataSource(dataSource).load().migrate();
     }
 

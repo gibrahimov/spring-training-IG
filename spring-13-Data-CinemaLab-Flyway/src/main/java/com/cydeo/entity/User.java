@@ -9,11 +9,11 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
 @Table(name = "user_account")
-public class User extends BaseEntity{
+public class User extends BaseEntity {
 
     private String email;
     private String password;
@@ -30,6 +30,5 @@ public class User extends BaseEntity{
                 ", password='" + password + '\'' +
                 ", username='" + username + '\'' +
                 '}';
-        // did like seperate toString() so can remove private Account account; portion
     }
 }
