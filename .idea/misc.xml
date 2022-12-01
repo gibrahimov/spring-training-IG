@@ -20,6 +20,10 @@
         <option value="$PROJECT_DIR$/spring-13-Data-CinemaLab/pom.xml" />
         <option value="$PROJECT_DIR$/spring-13-Data-CinemaLab-Flyway/pom.xml" />
         <option value="$PROJECT_DIR$/spring-14-Data-Queries/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-15-REST/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-16-REST-Jackson/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-17-REST-ConsumingApis/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-18-REST-SchoolLab/pom.xml" />
       </list>
     </option>
   </component>
