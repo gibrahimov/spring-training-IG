@@ -52,10 +52,6 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
     @Query(value = "SELECT * FROM account_details WHERE age < ?1", nativeQuery = true)
     List<Account> retrieveAllByAgeLowerThan(Integer age);  // Can be used with @Param("age") too
 
-    // or we can use @Param
-    @Query(value = "select * from account_details where age < :age", nativeQuery = true)
-    List<Account> retrieveAllByAgeLowerThan2(@Param("age") Integer age);
-
     //Write a native query to read all accounts that a specific value can be containable in the name, address, country, state, city
     @Query(value = "SELECT * FROM account_details ad WHERE name ILIKE concat('%', ?1, '%') " +
             "OR country ILIKE concat('%', ?1, '%') " +
